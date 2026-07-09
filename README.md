@@ -2,7 +2,7 @@
 
 An exploratory analysis of Airbnb markets across Austin, Chicago, Los
 Angeles, New York, and Portland using September 2025 data from Inside
-Airbnb. The dashboard is live and available [here]().
+Airbnb.
 
 ## Project Overview
 
@@ -51,28 +51,6 @@ data directory expected by the ETL pipeline.
 Cross-city population estimates were obtained from the U.S. Census
 Bureau.
 
-## Project Structure
-
-Update this section to match the final repository layout.
-
-``` text
-project/
-├── dashboard/
-│   ├── app.py
-│   └── pages/
-├── src/
-│   ├── etl.py
-│   ├── analysis.py
-│   └── plots.py
-├── report/
-│   ├── AirbnbReport.tex
-│   └── figures/
-├── data/
-│   └── README.md
-├── requirements.txt
-└── README.md
-```
-
 ## Analysis Workflow
 
 ### Data Cleaning and Validation
@@ -118,22 +96,12 @@ than 1% of the combined observations. Private-room models were explored
 but produced consistently weak explanatory power, so they were not
 included in the final comparison.
 
-The regression models are explanatory rather than causal.
-
 ## Interactive Dashboard
 
 The Streamlit dashboard allows users to switch between the five cities,
 inspect spatial DBSCAN clusters, compare pricing patterns, explore host
 and room composition, review city-level regression coefficients and
 significance, and compare availability distributions.
-
-**Live dashboard:** Add the deployed Streamlit Community Cloud link
-here.
-
-## Running the Project Locally
-
-Update these commands to match the final repository and entry-point
-names.
 
 ``` bash
 git clone <repository-url>
@@ -145,6 +113,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run dashboard/app.py
 ```
+
+Since Inside Airbnb does not allow reuploading data, we will not be able to
+publically host the data through Streamlit Community Cloud. Instead, you are
+able to watch a short walkthrough of the dashboard here:
+
+[Dashboard Demo](DashboardScreencast.mp4)
 
 ## Limitations
 
@@ -166,10 +140,6 @@ expanding to additional cities, adding neighborhood-level socioeconomic
 variables, testing alternative spatial models, and developing predictive
 models as a separate task from the explanatory OLS analysis.
 
-## Technologies
+## Software Utilized
 
 Python, pandas, NumPy, Matplotlib, scikit-learn, statsmodels, and Streamlit.
-
-## Author
-
-Hunter Homan
