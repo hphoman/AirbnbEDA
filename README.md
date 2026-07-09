@@ -104,7 +104,7 @@ and room composition, review city-level regression coefficients and
 significance, and compare availability distributions.
 
 ``` bash
-git clone <repository-url>
+git clone https://github.com/hphoman/AirbnbEDA
 cd <repository-name>
 
 python -m venv .venv
@@ -118,7 +118,7 @@ Since Inside Airbnb does not allow reuploading data, we will not be able to
 publically host the data through Streamlit Community Cloud. Instead, you are
 able to watch a short walkthrough of the dashboard here:
 
-[Dashboard Demo](DashboardScreencast.mp4)
+![Dashboard Demo](dashboard_demo.gif)
 
 ## Limitations
 
