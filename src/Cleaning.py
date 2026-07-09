@@ -1,5 +1,6 @@
 import ast
 import pandas as pd
+from pathlib import Path
 from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
 
@@ -34,18 +35,17 @@ def flag(df: pd.DataFrame) -> pd.Series:
     is_suspicious = (suspicion_score >= 3) | extreme_price | extreme_price_per_person
     return is_suspicious
 
+ROOT_DIR = Path(__file__).resolve().parents[1]
+DATA_DIR = ROOT_DIR / "data"
 
 def build_cities() -> dict:
-    """
-    Returns cleaned and clustered DataFrames
-    """
     print("Loading data...")
 
-    AustinData = pd.read_csv('data/Austin.csv')
-    ChicagoData = pd.read_csv('data/Chicago.csv')
-    LosAngelesData = pd.read_csv('data/LosAngeles.csv')
-    NewYorkData = pd.read_csv('data/NewYorkCity.csv')
-    PortlandData = pd.read_csv('data/Portland.csv')
+    AustinData = pd.read_csv(DATA_DIR / "Austin.csv")
+    ChicagoData = pd.read_csv(DATA_DIR / "Chicago.csv")
+    LosAngelesData = pd.read_csv(DATA_DIR / "LosAngeles.csv")
+    NewYorkData = pd.read_csv(DATA_DIR / "NewYorkCity.csv")
+    PortlandData = pd.read_csv(DATA_DIR / "Portland.csv")
 
     columns_to_use = ['host_id', 'host_response_time', 'host_is_superhost', 'neighbourhood_group_cleansed', 'latitude',
                       'longitude', 'room_type',
